@@ -1,4 +1,4 @@
-/* Author(s):David Walker
+/* Author(s):David Walker, Daryn Brown, Leondre Bromfield, Jevaun Messam, Jheanelle Daley
  * Class: User.java
  * 
  * */
