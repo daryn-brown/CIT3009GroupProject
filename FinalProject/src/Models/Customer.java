@@ -12,6 +12,10 @@ public class Customer extends User{
     //Default Constructor
     public Customer(){
         super();
+        email = "test@example.com";
+        contact = "1234567890";
+        issueType = "test";
+        issueDetails = "testing output";
     }
 
     //Primary Constructor
@@ -24,21 +28,16 @@ public class Customer extends User{
 
 
     //Accessor and Mutator Methods
-    
     public void setEmail(String email) {
         this.email = email;
     
     }
-
     public String getEmail() {
         return email;
     }
-
-
     public void setContact(String contact) {
         this.contact = contact;
     }
-
     public String getContact() {
         return contact;
     }
@@ -54,6 +53,7 @@ public class Customer extends User{
     public String getIssueDetails() {
         return issueDetails;
     }
+    
     @Override
     public String toString() {
         return "Customer [email=" + email +
