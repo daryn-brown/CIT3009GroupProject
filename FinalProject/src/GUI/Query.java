@@ -30,7 +30,7 @@ public class Query extends JFrame{
         setIconImage(icon.getImage());
 
         //window
-        setSize(600, 400);
+        setSize(600, 500);
         setLocationRelativeTo(null);
 
         //combo box label

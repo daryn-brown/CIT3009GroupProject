@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -15,12 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.Component;
 
 public class Employee extends JFrame {
     private JTable table1;
@@ -43,7 +39,7 @@ public class Employee extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        //select View message
+        // select View message
         JLabel selectViewLabel = new JLabel("Please Select a View from the Menu above");
         JPanel messagePanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -67,14 +63,22 @@ public class Employee extends JFrame {
         tecPanel.add(tecImageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Technician.png")));
         tecPanel.add(new JScrollPane(table2));
 
-
         // Create a JMenuBar
         JMenuBar menuBar = new JMenuBar();
-        JMenu fileMenu = new JMenu("File");
+        JMenu fileMenu = new JMenu("Window");
         menuBar.add(fileMenu);
-
+        // Create a "Home" menu item and add it to the "File" menu
+        JMenuItem homeItem = new JMenuItem("Return to Home Page");
+        fileMenu.add(homeItem);
+        homeItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Welcome();
+            }
+        });
         // Create a "Close" menu item and add it to the "File" menu
-        JMenuItem closeMenuItem = new JMenuItem("Close");
+        JMenuItem closeMenuItem = new JMenuItem("Close Application");
         fileMenu.add(closeMenuItem);
         closeMenuItem.addActionListener(new ActionListener() {
             @Override

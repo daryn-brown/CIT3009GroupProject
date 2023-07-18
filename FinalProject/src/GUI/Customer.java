@@ -71,7 +71,7 @@ public class Customer extends JFrame{
 		serviceButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 //call service window
-                
+                new ServiceRequest();
             }
         });
 		gbc.gridx = 0;
