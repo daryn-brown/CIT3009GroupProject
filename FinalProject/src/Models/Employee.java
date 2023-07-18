@@ -12,7 +12,7 @@ public class Employee extends User{
     }
     //primary constructor
     public Employee(int userID, String firstName, String lastName, String password, String jobTitle) {
-        super(userID, firstName, lastName, password);
+   //     super(userID, firstName, lastName, password);
         this.jobTitle = jobTitle;
     }
     //copy constructor
