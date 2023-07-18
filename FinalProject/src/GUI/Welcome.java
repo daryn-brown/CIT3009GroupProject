@@ -23,7 +23,7 @@ public class Welcome extends JFrame{
     	super("Welcome to Flow");
         setLayout(new BorderLayout());
 
-        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 
         JButton registerBtn = new JButton("Register");
@@ -49,7 +49,7 @@ public class Welcome extends JFrame{
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
-        JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\flowicon.png"));
+        JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         buttonPanel.add(imageLabel, gbc);

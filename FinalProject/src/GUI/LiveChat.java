@@ -28,7 +28,7 @@ public class LiveChat extends JFrame{
 	public LiveChat(String name) {
 		super("Live Chat");
 
-        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
         setLayout(new BorderLayout());
 

@@ -22,7 +22,7 @@ public class Customer extends JFrame{
 		super("Customer Dashboard");
 		
 		//ICON
-		ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+		ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 		
 		//Formatting
@@ -32,7 +32,7 @@ public class Customer extends JFrame{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
         //Flow icon
-        JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\flow.png"));
+        JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Customer.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         buttonPanel.add(imageLabel, gbc);
@@ -72,6 +72,7 @@ public class Customer extends JFrame{
             public void actionPerformed(ActionEvent e){
                 //call service window
                 dispose();
+                new Employee();
             }
         });
 		gbc.gridx = 0;

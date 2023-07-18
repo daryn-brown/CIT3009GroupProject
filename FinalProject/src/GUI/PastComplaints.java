@@ -11,7 +11,7 @@ public class PastComplaints extends JFrame{
 	public PastComplaints(String[][] data) {
 		super("Past Complaints");
 
-		ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+		ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 		
 		String[] columnNames = {"Complaint ID", "Complaint Type", "Details", "Issue ID"};

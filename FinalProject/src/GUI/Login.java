@@ -23,7 +23,7 @@ public class Login extends JFrame{
     public Login() {
         super("Login");
         
-        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
         
         setLayout(new GridBagLayout());

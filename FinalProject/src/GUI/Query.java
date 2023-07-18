@@ -26,7 +26,7 @@ public class Query extends JFrame{
 		super("Query");
 
         //icon change path if necessary
-        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 
         //window

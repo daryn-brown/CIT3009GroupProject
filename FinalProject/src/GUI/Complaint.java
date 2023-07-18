@@ -27,7 +27,7 @@ public class Complaint extends JFrame{
 		super("Complaint");
 
         //icon change path if necessary
-        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
+        ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 
         //window
@@ -38,7 +38,7 @@ public class Complaint extends JFrame{
         JLabel comboBoxLabel = new JLabel("Choose issue type:");
 
         //combo box
-        String[] options = {"Speed", "Connectivity", "Other"};
+        String[] options = {"Broadband", "Connectivity", "Weak Connection"};
         JComboBox<String> comboBox = new JComboBox<>(options);
         comboBox.setMaximumSize(comboBox.getPreferredSize());
 
