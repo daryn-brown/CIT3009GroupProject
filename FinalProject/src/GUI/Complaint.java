@@ -19,11 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 public class Complaint extends JFrame{
-	private JTextField message;
-	private JComboBox type;
+	
 	
 	public Complaint() {
 		super("Complaint");
