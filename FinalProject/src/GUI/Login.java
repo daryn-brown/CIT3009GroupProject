@@ -73,11 +73,13 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (radioButton1.isSelected()) {
                     new Employee();
+                     dispose();
                 } else if (radioButton2.isSelected()) {
                     new Customer();
+                     dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Please select employee or customer");
                 }
-
-                dispose();
             }
         });
 
