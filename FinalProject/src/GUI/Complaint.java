@@ -29,7 +29,7 @@ public class Complaint extends JFrame{
 		super("Complaint");
 
         //icon change path if necessary
-        ImageIcon icon = new ImageIcon("C:\\Users\\leond\\OneDrive\\Documents\\Advanced Programming\\GuiTest\\src\\flowicon.png");
+        ImageIcon icon = new ImageIcon("flowicon.png");
         setIconImage(icon.getImage());
 
         //window

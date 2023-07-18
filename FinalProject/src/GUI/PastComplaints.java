@@ -1,4 +1,5 @@
 package GUI;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -9,6 +10,9 @@ public class PastComplaints extends JFrame{
 	
 	public PastComplaints(String[][] data) {
 		super("Past Complaints");
+
+		ImageIcon icon = new ImageIcon("flowicon.png");
+        setIconImage(icon.getImage());
 		
 		String[] columnNames = {"Complaint ID", "Complaint Type", "Details", "Issue ID"};
 		

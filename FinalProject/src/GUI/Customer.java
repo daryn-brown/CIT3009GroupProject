@@ -22,7 +22,7 @@ public class Customer extends JFrame{
 		super("Customer");
 		
 		//ICON
-		ImageIcon icon = new ImageIcon("C:\\Users\\leond\\OneDrive\\Documents\\Advanced Programming\\GuiTest\\src\\flowicon.png");
+		ImageIcon icon = new ImageIcon("flowicon.png");
         setIconImage(icon.getImage());
 		
 		//Formatting
@@ -32,7 +32,7 @@ public class Customer extends JFrame{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
         //Flow icon
-        JLabel imageLabel = new JLabel(new ImageIcon("C:\\Users\\leond\\OneDrive\\Documents\\Advanced Programming\\GuiTest\\src\\flow.png"));
+        JLabel imageLabel = new JLabel(new ImageIcon("flow.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         buttonPanel.add(imageLabel, gbc);

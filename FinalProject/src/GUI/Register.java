@@ -30,7 +30,7 @@ public class Register extends JFrame{
     public Register() {
         super("Register");
         
-        ImageIcon icon = new ImageIcon("C:\\Users\\leond\\OneDrive\\Documents\\Advanced Programming\\GuiTest\\src\\flowicon.png");
+        ImageIcon icon = new ImageIcon("flowicon.png");
         setIconImage(icon.getImage());
         
         setLayout(new GridBagLayout());
