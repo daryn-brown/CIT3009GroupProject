@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 public class Customer extends JFrame{
 	public Customer() {
-		super("Customer");
+		super("Customer Dashboard");
 		
 		//ICON
 		ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\flowicon.png");
