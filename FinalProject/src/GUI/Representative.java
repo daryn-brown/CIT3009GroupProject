@@ -15,7 +15,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Representative extends JFrame {
@@ -24,8 +23,8 @@ public class Representative extends JFrame {
     private JTable table1, table2;
     private JScrollPane scrollPane;
     private GridBagConstraints gbc;
-    private JTextField textField;
-    private JTextField nameField;
+    //private JTextField textField;
+    //private JTextField nameField;
 
     public Representative() {
 
