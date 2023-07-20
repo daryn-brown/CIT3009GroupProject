@@ -1,6 +1,8 @@
 package GUI;
 
-import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,61 +14,40 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 
-public class Employee extends JFrame {
-    private JTable table1;
-    private JTable table2;
-    private JPanel repPanel;
-    private JPanel tecPanel;
-    private JLabel repImageLabel;
-    private JLabel tecImageLabel;
-    private JLabel messageLabel;
+public class Representative extends JFrame {
+    public Representative() {
 
-    public Employee() {
-        super("Employee Dashboard");
+        super("Representative Dashboard");
 
         // ICON
         ImageIcon icon = new ImageIcon("FinalProject\\src\\GUI\\resources\\flowicon.png");
         setIconImage(icon.getImage());
 
-        setSize(600, 500);
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        // select View message
-        JLabel selectViewLabel = new JLabel("Please Select a View from the Menu above");
-        JPanel messagePanel = new JPanel(new GridBagLayout());
+        // Formatting
+        JPanel buttonPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // graphics icon
+        JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Representative.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
-        messagePanel.add(selectViewLabel, gbc);
-        add(messagePanel, BorderLayout.CENTER);
+        buttonPanel.add(imageLabel, gbc);
+        add(buttonPanel);
 
-        // create tables
-        table1 = new JTable(6, 4);
-        table2 = new JTable(5, 5);
-
-        // Create the panels
-        repPanel = new JPanel();
-        repPanel.add(
-                repImageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Representative.png")));
-        repPanel.add(new JScrollPane(table1));
-        tecPanel = new JPanel();
-        tecPanel.add(tecImageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Technician.png")));
-        tecPanel.add(new JScrollPane(table2));
+        // Window
+        setSize(600, 500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
 
         // Create a JMenuBar
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Window");
         menuBar.add(fileMenu);
+
         // Create a "Home" menu item and add it to the "File" menu
         JMenuItem homeItem = new JMenuItem("Return to Home Page");
         fileMenu.add(homeItem);
@@ -77,6 +58,7 @@ public class Employee extends JFrame {
                 new Welcome();
             }
         });
+
         // Create a "Close" menu item and add it to the "File" menu
         JMenuItem closeMenuItem = new JMenuItem("Close Application");
         fileMenu.add(closeMenuItem);
@@ -101,31 +83,31 @@ public class Employee extends JFrame {
             }
         });
 
-        // Select between Representative and Technician
+        // Select views
         JMenu selector = new JMenu("Select View");
         menuBar.add(selector);
-        JMenuItem rep = new JMenuItem("Representative View");
-        JMenuItem tech = new JMenuItem("Technician View");
-        selector.add(rep);
-        selector.add(tech);
-        rep.addActionListener(new ActionListener() {
+        JMenuItem view1 = new JMenuItem("View List of Services");
+        JMenuItem view2 = new JMenuItem("View all Customer complaints");
+        JMenuItem view3 = new JMenuItem("Assign complaint to Technician");
+        selector.add(view1);
+        selector.add(view2);
+        selector.add(view3);
+        view1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                remove(tecPanel);
-                remove(messagePanel);
-                add(repPanel);
-                revalidate();
-                repaint();
+                //view 1 View List of Services
             }
         });
-        tech.addActionListener(new ActionListener() {
+        view2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                remove(repPanel);
-                remove(messagePanel);
-                add(tecPanel);
-                revalidate();
-                repaint();
+                //view 2 All Customer complaints
+            }
+        });
+        view3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //view 3 Assign to Technician
             }
         });
 
@@ -140,6 +122,7 @@ public class Employee extends JFrame {
                 new LiveChat("Employee");
             }
         });
+
         // Set the menu bar for the frame
         setJMenuBar(menuBar);
 
