@@ -15,13 +15,17 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class Representative extends JFrame {
 
     private JLabel selectViewLabel;
-    private JTable table1, table2, table3;
+    private JTable table1, table2;
     private JScrollPane scrollPane;
     private GridBagConstraints gbc;
+    private JTextField textField;
+    private JTextField nameField;
 
     public Representative() {
 
@@ -104,62 +108,103 @@ public class Representative extends JFrame {
         JMenuItem view3 = new JMenuItem("Assign complaint to Technician");
         selector.add(view1);
         selector.add(view2);
-        selector.add(view3);
+        //selector.add(view3);
         view1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // view 1 View List of Services
                 // Remove select view label
                 selectViewLabel.setVisible(false);
-                // Removes any other table present
                 if (scrollPane != null) {
                     remove(scrollPane);
                 }
 
-                // sets the table to be in the center with correct proportions
                 gbc.insets = new Insets(5, 5, 5, 5);
                 gbc.fill = GridBagConstraints.BOTH;
                 gbc.weightx = 1;
                 gbc.weighty = 1;
+                // Create column names for the table
+                String[] columnNames = { "Service Types", "# of Resolved", "Outsanding" };
 
+                // Create a table model and set the column names
+                DefaultTableModel model = new DefaultTableModel(columnNames, 10);
 
+                // Create a new JTable with the table model
+                table1 = new JTable(model);
 
+                // Create a new JScrollPane to hold the table
+                scrollPane = new JScrollPane(table1);
+
+                // Add the scroll pane to the frame
+                gbc.gridx = 0;
+                gbc.gridy = 1;
+                add(scrollPane, gbc);
+
+                // Repaint the frame
+                revalidate();
+                repaint();
+                selectViewLabel.setVisible(false);
             }
         });
         view2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // view 2 All Customer complaints
-                 // Remove select view label
+                // Remove select view label
                 selectViewLabel.setVisible(false);
-                // Removes any other table present
                 if (scrollPane != null) {
                     remove(scrollPane);
                 }
+                // prompts user for the reference id to search for the record
 
-                // sets the table to be in the center with correct proportions
+                String id = JOptionPane.showInputDialog(null, "Enter Service Type");
+
+                // check if it exists
+                if (id.equals("Broadband")) {
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "No references found.");
+                }
+
                 gbc.insets = new Insets(5, 5, 5, 5);
                 gbc.fill = GridBagConstraints.BOTH;
                 gbc.weightx = 1;
                 gbc.weighty = 1;
+
+                // Create column names for the table
+                String[] columnNames = { "Complaint ID", "Complaint Type", "Details", "Issue ID" };
+
+                // Create a table model and set the column names
+                DefaultTableModel model = new DefaultTableModel(columnNames, 10);
+
+                // Create a new JTable with the table model
+                table2 = new JTable(model);
+
+                // Create a new JScrollPane to hold the table
+                scrollPane = new JScrollPane(table2);
+
+                // Add the scroll pane to the frame
+                gbc.gridx = 0;
+                gbc.gridy = 1;
+                add(scrollPane, gbc);
+
+                // Repaint the frame
+                revalidate();
+                repaint();
             }
         });
         view3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // view 3 Assign to Technician
-                 // Remove select view label
+                // Remove select view label
                 selectViewLabel.setVisible(false);
-                // Removes any other table present
                 if (scrollPane != null) {
                     remove(scrollPane);
                 }
 
-                // sets the table to be in the center with correct proportions
-                gbc.insets = new Insets(5, 5, 5, 5);
-                gbc.fill = GridBagConstraints.BOTH;
-                gbc.weightx = 1;
-                gbc.weighty = 1;
+                revalidate();
+                repaint();
             }
         });
 
