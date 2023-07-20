@@ -28,6 +28,7 @@ public class Register extends JFrame {
     private JTextField contactField;
     private JPasswordField passwordField;
     private JPasswordField confirmField;
+    private JButton clearButton;
 
     public Register() {
         super("Register");
@@ -155,16 +156,16 @@ public class Register extends JFrame {
 
                     if (radioButton1.isSelected()) {
                         // Representative constructor
-
-                        dispose();
+                        JOptionPane.showMessageDialog(null, "Representative Registered");
+                        clearButton.doClick();
                     } else if (radioButton2.isSelected()) {
                         // Technician constructor
-
-                        dispose();
+                        JOptionPane.showMessageDialog(null, "Technician Registered");
+                        clearButton.doClick();
                     } else if (radioButton3.isSelected()) {
                         // Customer constructor
-
-                        dispose();
+                        JOptionPane.showMessageDialog(null, "Customer Registered");
+                        clearButton.doClick();
                     } else {
                         JOptionPane.showMessageDialog(null, "Please select employee or customer");
                     }
@@ -180,7 +181,7 @@ public class Register extends JFrame {
         add(registerButton, gbc);
 
         // clear all button
-        JButton clearButton = new JButton("Clear all");
+        clearButton = new JButton("Clear all");
         clearButton.setToolTipText("Removes text from the fields");
         clearButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
