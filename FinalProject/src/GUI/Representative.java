@@ -13,9 +13,16 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class Representative extends JFrame {
+
+    private JLabel selectViewLabel;
+    private JTable table1, table2, table3;
+    private JScrollPane scrollPane;
+    private GridBagConstraints gbc;
+
     public Representative() {
 
         super("Representative Dashboard");
@@ -25,17 +32,23 @@ public class Representative extends JFrame {
         setIconImage(icon.getImage());
 
         // Formatting
-        JPanel buttonPanel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
+        setLayout(new GridBagLayout());
+        gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // graphics icon
+        // Graphics icon
         JLabel imageLabel = new JLabel(new ImageIcon("FinalProject\\src\\GUI\\resources\\Representative.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
-        buttonPanel.add(imageLabel, gbc);
-        add(buttonPanel);
+        add(imageLabel, gbc);
+
+        // Select View message
+        selectViewLabel = new JLabel("Please Select a View from the Menu Above");
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(selectViewLabel, gbc);
 
         // Window
         setSize(600, 500);
@@ -95,19 +108,58 @@ public class Representative extends JFrame {
         view1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //view 1 View List of Services
+                // view 1 View List of Services
+                // Remove select view label
+                selectViewLabel.setVisible(false);
+                // Removes any other table present
+                if (scrollPane != null) {
+                    remove(scrollPane);
+                }
+
+                // sets the table to be in the center with correct proportions
+                gbc.insets = new Insets(5, 5, 5, 5);
+                gbc.fill = GridBagConstraints.BOTH;
+                gbc.weightx = 1;
+                gbc.weighty = 1;
+
+
+
             }
         });
         view2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //view 2 All Customer complaints
+                // view 2 All Customer complaints
+                 // Remove select view label
+                selectViewLabel.setVisible(false);
+                // Removes any other table present
+                if (scrollPane != null) {
+                    remove(scrollPane);
+                }
+
+                // sets the table to be in the center with correct proportions
+                gbc.insets = new Insets(5, 5, 5, 5);
+                gbc.fill = GridBagConstraints.BOTH;
+                gbc.weightx = 1;
+                gbc.weighty = 1;
             }
         });
         view3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //view 3 Assign to Technician
+                // view 3 Assign to Technician
+                 // Remove select view label
+                selectViewLabel.setVisible(false);
+                // Removes any other table present
+                if (scrollPane != null) {
+                    remove(scrollPane);
+                }
+
+                // sets the table to be in the center with correct proportions
+                gbc.insets = new Insets(5, 5, 5, 5);
+                gbc.fill = GridBagConstraints.BOTH;
+                gbc.weightx = 1;
+                gbc.weighty = 1;
             }
         });
 

@@ -114,10 +114,10 @@ public class Technician extends JFrame {
                 String[] columnNames = { "Complaint ID", "Complaint Type", "Complaint Details", "Issue ID" };
 
                 // Create a table model and set the column names
-                DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+                DefaultTableModel model = new DefaultTableModel(columnNames, 10);
 
                 // Create a new JTable with the table model
-                table = new JTable(model);
+                table = new JTable(model); 
 
                 // Create a new JScrollPane to hold the table
                 scrollPane = new JScrollPane(table);
@@ -141,16 +141,29 @@ public class Technician extends JFrame {
                 if (scrollPane != null) {
                     remove(scrollPane);
                 }
+
+                // prompts user for the reference id to search for the record
+
+                String id = JOptionPane.showInputDialog(null, "Enter reference ID");
+            
+                // check if it exists
+                if (id.equals("123")) {
+
+                }else{
+                    JOptionPane.showMessageDialog(null, "No references found.");
+                }
+
                 gbc.insets = new Insets(5, 5, 5, 5);
                 gbc.fill = GridBagConstraints.BOTH;
                 gbc.weightx = 1;
                 gbc.weighty = 1;
+
                 // Create column names for the table
                 String[] columnNames = { "Customer ID", "First Name", "Last Name", "Email Address", "Number",
                         "Type of Issue", "Details" };
 
                 // Create a table model and set the column names
-                DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+                DefaultTableModel model = new DefaultTableModel(columnNames, 1);
 
                 // Create a new JTable with the table model
                 table = new JTable(model);
@@ -178,6 +191,26 @@ public class Technician extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new LiveChat("Employee");
+            }
+        });
+
+        // Update availability
+        JMenu availabilityMenu = new JMenu("Update Availability");
+        menuBar.add(availabilityMenu);
+        JMenuItem availableMenuItem = new JMenuItem("Available");
+        availabilityMenu.add(availableMenuItem);
+        JMenuItem unavailableMenuItem = new JMenuItem("Unavailable");
+        availabilityMenu.add(unavailableMenuItem);
+        availableMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Your status is now set to Available!", "Availabilty Status", JOptionPane.WARNING_MESSAGE);
+            }
+        });
+        unavailableMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Your status is now set to Unavailable!", "Availabilty Status", JOptionPane.WARNING_MESSAGE);
             }
         });
         // Set the menu bar for the frame

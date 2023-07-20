@@ -42,7 +42,7 @@ public class ServiceRequest extends JFrame {
 
                 String reason = JOptionPane.showInputDialog(null, "Please specify the details of request:",
                         "Request Repairs", JOptionPane.QUESTION_MESSAGE);
-
+                System.out.println(reason);
             }
         });
         gbc.gridx = 0;
@@ -57,7 +57,7 @@ public class ServiceRequest extends JFrame {
 
                 String reason = JOptionPane.showInputDialog(null, "Please specify the details of the request:",
                         "Billing Request", JOptionPane.QUESTION_MESSAGE);
-
+                System.out.println(reason);
             }
         });
         gbc.gridx = 0;
@@ -72,6 +72,7 @@ public class ServiceRequest extends JFrame {
 
                 String reason = JOptionPane.showInputDialog(null, "Please specify the details of request:",
                         "Technical/Network Request", JOptionPane.QUESTION_MESSAGE);
+                System.out.println(reason);
             }
         });
         gbc.gridx = 0;
@@ -86,7 +87,7 @@ public class ServiceRequest extends JFrame {
 
                 String reason = JOptionPane.showInputDialog(null, "Please specify the details of request:",
                         "Internet Support Request", JOptionPane.QUESTION_MESSAGE);
-
+                System.out.println(reason);
             }
         });
         gbc.gridx = 0;
